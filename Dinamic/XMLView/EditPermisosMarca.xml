@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="data" numcolumns="12">
+            <column name="codpermisosmarca" order="100">
+                <widget type="number" fieldname="codpermisosmarca"/>
+            </column>
+             <column name="idusuario" titleurl=" " order="110" title="Usuario">
+                <widget type="select" fieldname="idusuariomarca" onclick="EditUsers">
+                    <values source="users" fieldcode="nick" fieldtitle="nick"/>
+                </widget>
+            </column>
+            <column name="Fabricantes" titleurl=" " order="120">
+                <widget type="select" fieldname="idmarca" onclick="EditFabricantes">
+                    <values source="fabricantes" fieldcode="codfabricante" fieldtitle="nombre"/>
+                </widget>
+            </column>
+        </group>
+    </columns>
+</view>

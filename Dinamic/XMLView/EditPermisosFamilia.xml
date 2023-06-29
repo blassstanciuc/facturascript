@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="data" numcolumns="12">
+            <column name="codpermisos" order="100">
+                <widget type="number" fieldname="codpermisos"/>
+            </column>
+             <column name="idusuario" titleurl=" " order="110" title="Usuario">
+                <widget type="select" fieldname="idusuario" onclick="EditUsers">
+                    <values source="users" fieldcode="nick" fieldtitle="nick"/>
+                </widget>
+            </column> 
+        </group>
+        <group name="familias" numcolumns="12">
+            <column name="idfamilia" titleurl=" " order="120">
+                <widget type="multiselect" fieldname="idfamilia" onclick="EditFamilia">
+                    <values source="familias" fieldcode="idfamilia" fieldtitle="descripcion"/>
+                </widget>
+            </column> 
+       </group>
+    </columns>
+</view>

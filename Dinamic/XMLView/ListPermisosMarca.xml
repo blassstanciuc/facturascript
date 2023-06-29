@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="codpermisosmarca" display="none" order="100">
+            <widget type="number" fieldname="codpermisosmarca" onclick=""/>
+        </column>
+        <column name="usuario" order="110">
+            <widget type="Text" fieldname="usuarios"/>
+        </column>
+        <column name="marca" order="120">
+            <widget type="Text" fieldname="marcas"/>
+        </column>
+    </columns>
+</view>

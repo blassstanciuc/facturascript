@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : permisosfamilia.xml
+    Author     : Blas stanciuc
+    Description:
+        Structure for the users table.
+-->
+<table>
+    <column>
+        <name>codpermisos</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+        <column>
+        <name>idusuario</name>
+        <type>character varying(50)</type>
+    </column>
+    <column>
+        <name>idfamilia</name>
+        <type>character varying(8)</type>
+    </column>
+    <constraint>
+        <name>permisos_pkey</name>
+        <type>PRIMARY KEY (codpermisos)</type>
+    </constraint>
+        <constraint>
+        <name>f_idusuario</name>
+        <type>FOREIGN KEY (idusuario) REFERENCES users (nick) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>f_idfamilia</name>
+        <type>FOREIGN KEY (idfamilia) REFERENCES familias (codfamilia) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>uniq_user_familia</name>
+        <type>UNIQUE (idusuario,idfamilia)</type>
+    </constraint>
+</table>

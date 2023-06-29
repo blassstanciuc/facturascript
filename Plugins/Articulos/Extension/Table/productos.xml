@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <column>
+        <name>codmodelo</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>codsubfamilia</name>
+        <type>integer</type>
+    </column>
+    <constraint>
+        <name>productos_modelo</name>
+        <type>FOREIGN KEY (codmodelo) REFERENCES tablamarcamodelo (id) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>productos_subfamilias</name>
+        <type>FOREIGN KEY (codsubfamilia) REFERENCES subfamilias (id) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

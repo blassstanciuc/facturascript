@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : permisosmarca.xml
+    Author     : Blas stanciuc
+    Description:
+        Structure for the users table.
+-->
+<table>
+    <column>
+        <name>codpermisosmarca</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idusuariomarca</name>
+        <type>character varying(50)</type>
+    </column>
+    <column>
+        <name>idmarca</name>
+        <type>character varying(8)</type>
+    </column>
+    <constraint>
+        <name>permisos_pkey</name>
+        <type>PRIMARY KEY (codpermisosmarca)</type>
+    </constraint>
+        <constraint>
+        <name>f_idusuariomarca</name>
+        <type>FOREIGN KEY (idusuariomarca) REFERENCES users (nick) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>f_idmarca</name>
+        <type>FOREIGN KEY (idmarca) REFERENCES fabricantes (codfabricante) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>uniq_user_marca</name>
+        <type>UNIQUE (idusuariomarca,idmarca)</type>
+    </constraint>
+</table>
