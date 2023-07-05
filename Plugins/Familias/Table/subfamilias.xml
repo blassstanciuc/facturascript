@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <column>
+        <name>id</name>
+        <type>serial</type>
+    </column>
+    <column>
+        <name>descripcion</name>
+        <type>character varying(200)</type>
+    </column>
+    <column>
+        <name>padre</name>
+        <type>character varying(8)</type>
+    </column>
+    <constraint>
+        <name>subfamilias_pkey</name>
+        <type>PRIMARY KEY (id)</type>
+    </constraint>
+    <constraint>
+        <name>padre_fk</name>
+        <type>FOREIGN KEY (padre) REFERENCES familias (codfamilia) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

@@ -3,6 +3,7 @@ namespace FacturaScripts\Plugins\PermisosUsuarios\Controller;
 
 use FacturaScripts\Core\Model\Familia;
 use FacturaScripts\Plugins\PermisosUsuarios\Model\PermisosFamilia;
+use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use Symfony\Component\HttpFoundation\Request;
 use FacturaScripts\Core\Base\Controller;
 
@@ -88,6 +89,20 @@ class EditPermisosFamilia extends \FacturaScripts\Core\Lib\ExtendedController\Ed
         $permisosFamilia->idusuario = $this->nick;
         $permisosFamilia->idfamilia = $this->codfamilia;
         $permisosFamilia->save();
+    }
+    protected function loadData($viewName, $view)
+    {
+        switch ($viewName) {
+            case 'ListStock':
+                $code = $this->getViewModelValue($this->getMainViewName(), 'codpermisos');
+                $where = [new DataBaseWhere('codpermisos', $code)];
+                $view->loadData('', $where);
+                break;
+
+            default:
+                parent::loadData($viewName, $view);
+                break;
+        }
     }
 }
 

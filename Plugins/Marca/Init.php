@@ -8,6 +8,7 @@ class Init extends InitClass
     public function init()
     {
         // se ejecuta cada vez que carga FacturaScripts (si este plugin está activado).
+    
     }
 
     public function update()

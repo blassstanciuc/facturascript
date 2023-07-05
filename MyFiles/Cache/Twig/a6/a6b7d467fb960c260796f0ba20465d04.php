@@ -42,6 +42,12 @@ class __TwigTemplate_84bc2288cd3cb7a68d26bb42b2502058 extends Template
         // line 117
         echo "
 ";
+        // line 154
+        echo "
+";
+        // line 192
+        echo "
+";
     }
 
     // line 37
@@ -402,6 +408,139 @@ class __TwigTemplate_84bc2288cd3cb7a68d26bb42b2502058 extends Template
         }
     }
 
+    // line 155
+    public function macro_userSelect($__id__ = null, $__name__ = null, $__value__ = null, $__allValues__ = [], $__label__ = null, $__icon__ = null, $__attributes__ = null, ...$__varargs__)
+    {
+        $macros = $this->macros;
+        $context = $this->env->mergeGlobals([
+            "id" => $__id__,
+            "name" => $__name__,
+            "value" => $__value__,
+            "allValues" => $__allValues__,
+            "label" => $__label__,
+            "icon" => $__icon__,
+            "attributes" => $__attributes__,
+            "varargs" => $__varargs__,
+        ]);
+
+        $blocks = [];
+
+        ob_start(function () { return ''; });
+        try {
+            // line 156
+            echo "    ";
+            if (($context["label"] ?? null)) {
+                // line 157
+                echo "        <label class=\"mb-1\" for=\"";
+                echo twig_escape_filter($this->env, ($context["name"] ?? null), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, ($context["label"] ?? null), "html", null, true);
+                echo "</label>
+    ";
+            }
+            // line 159
+            echo "
+    ";
+            // line 160
+            if (($context["icon"] ?? null)) {
+                // line 161
+                echo "        <div class=\"input-group\">
+            <span class=\"input-group-prepend\">
+                <span class=\"input-group-text\">
+                    <i class=\"";
+                // line 164
+                echo twig_escape_filter($this->env, ($context["icon"] ?? null), "html", null, true);
+                echo " fa-fw\" aria-hidden=\"true\"></i>
+                </span>
+            </span>
+    ";
+            }
+            // line 168
+            echo "
+        <select id=\"";
+            // line 169
+            echo twig_escape_filter($this->env, ($context["id"] ?? null), "html", null, true);
+            echo "\" name=\"";
+            echo twig_escape_filter($this->env, ($context["name"] ?? null), "html", null, true);
+            echo "\"
+                ";
+            // line 170
+            if ( !twig_get_attribute($this->env, $this->source, ($context["attributes"] ?? null), "class", [], "any", true, true, false, 170)) {
+                // line 171
+                echo "                class=\"form-control\"
+                ";
+            }
+            // line 173
+            echo "
+                ";
+            // line 174
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["attributes"] ?? null));
+            foreach ($context['_seq'] as $context["attribute"] => $context["attrValue"]) {
+                // line 175
+                echo "                    ";
+                echo twig_escape_filter($this->env, $context["attribute"], "html", null, true);
+                echo "=\"";
+                echo twig_escape_filter($this->env, $context["attrValue"], "html", null, true);
+                echo "\"
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['attribute'], $context['attrValue'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 176
+            echo "> ";
+            // line 177
+            echo "
+            ";
+            // line 178
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["allValues"] ?? null));
+            foreach ($context['_seq'] as $context["key"] => $context["option"]) {
+                // line 179
+                echo "             ";
+                if (($context["key"] != "admin")) {
+                    // line 180
+                    echo "                <option value=\"";
+                    echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+                    echo "\"";
+                    if ((($context["value"] ?? null) == $context["key"])) {
+                        echo " selected=\"selected\"";
+                    }
+                    echo ">
+                    ";
+                    // line 181
+                    echo twig_escape_filter($this->env, $context["option"], "html", null, true);
+                    echo "
+                </option>
+                ";
+                }
+                // line 184
+                echo "            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['key'], $context['option'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 185
+            echo "        </select>
+
+    ";
+            // line 187
+            if (($context["icon"] ?? null)) {
+                // line 188
+                echo "        </div>
+    ";
+            }
+            // line 190
+            echo "
+";
+
+            return ('' === $tmp = ob_get_contents()) ? '' : new Markup($tmp, $this->env->getCharset());
+        } finally {
+            ob_end_clean();
+        }
+    }
+
     public function getTemplateName()
     {
         return "Macro/Forms.html.twig";
@@ -414,7 +553,7 @@ class __TwigTemplate_84bc2288cd3cb7a68d26bb42b2502058 extends Template
 
     public function getDebugInfo()
     {
-        return array (  396 => 152,  392 => 150,  390 => 149,  386 => 147,  377 => 144,  371 => 143,  366 => 142,  362 => 141,  359 => 140,  357 => 139,  346 => 138,  342 => 137,  339 => 136,  335 => 134,  333 => 133,  327 => 132,  324 => 131,  317 => 127,  312 => 124,  310 => 123,  307 => 122,  299 => 120,  296 => 119,  277 => 118,  267 => 115,  263 => 113,  261 => 112,  257 => 110,  248 => 107,  239 => 106,  235 => 105,  232 => 104,  230 => 103,  219 => 102,  215 => 101,  212 => 100,  208 => 98,  206 => 97,  200 => 96,  197 => 95,  190 => 91,  185 => 88,  183 => 87,  180 => 86,  172 => 84,  169 => 83,  150 => 82,  139 => 61,  137 => 60,  134 => 59,  132 => 58,  121 => 57,  117 => 56,  114 => 55,  110 => 53,  108 => 52,  98 => 51,  95 => 50,  88 => 46,  83 => 43,  81 => 42,  78 => 41,  70 => 39,  67 => 38,  48 => 37,  43 => 117,  40 => 64,  37 => 20,);
+        return array (  535 => 190,  531 => 188,  529 => 187,  525 => 185,  519 => 184,  513 => 181,  504 => 180,  501 => 179,  497 => 178,  494 => 177,  492 => 176,  481 => 175,  477 => 174,  474 => 173,  470 => 171,  468 => 170,  462 => 169,  459 => 168,  452 => 164,  447 => 161,  445 => 160,  442 => 159,  434 => 157,  431 => 156,  412 => 155,  402 => 152,  398 => 150,  396 => 149,  392 => 147,  383 => 144,  377 => 143,  372 => 142,  368 => 141,  365 => 140,  363 => 139,  352 => 138,  348 => 137,  345 => 136,  341 => 134,  339 => 133,  333 => 132,  330 => 131,  323 => 127,  318 => 124,  316 => 123,  313 => 122,  305 => 120,  302 => 119,  283 => 118,  273 => 115,  269 => 113,  267 => 112,  263 => 110,  254 => 107,  245 => 106,  241 => 105,  238 => 104,  236 => 103,  225 => 102,  221 => 101,  218 => 100,  214 => 98,  212 => 97,  206 => 96,  203 => 95,  196 => 91,  191 => 88,  189 => 87,  186 => 86,  178 => 84,  175 => 83,  156 => 82,  145 => 61,  143 => 60,  140 => 59,  138 => 58,  127 => 57,  123 => 56,  120 => 55,  116 => 53,  114 => 52,  104 => 51,  101 => 50,  94 => 46,  89 => 43,  87 => 42,  84 => 41,  76 => 39,  73 => 38,  54 => 37,  49 => 192,  46 => 154,  43 => 117,  40 => 64,  37 => 20,);
     }
 
     public function getSourceContext()

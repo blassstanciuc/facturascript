@@ -36,7 +36,7 @@ class Producto
             $resultsMarca = $pdoMarca->select("SELECT * FROM fabricantes");
             $resultsSubfamilia = $pdoSubfamilia->select("SELECT * FROM subfamilias ");
          }
-         
+
          $options = '';
          $opcionsMarca = '';
          $opcionsSubfamilia = '';
@@ -60,7 +60,7 @@ class Producto
         foreach ($resultsSubfamilia as $result) {
          $descripcion = $result['descripcion'];
          $codigo = $result['id'];
-         $opcionsSubfamilia .= "<option fieldcode='$codigo' fieldfilter='padre'>$descripcion</option>";
+         $opcionsSubfamilia .= "<option value='$codigo'>$descripcion</option>";
          }
          $this->codsubfamilia = $opcionsSubfamilia;
          //$columna = $this->getViewModelValue('EditProducto', 'codfamilia');
@@ -71,7 +71,7 @@ class Producto
    } else {
       $codigofamilia = ''; // Valor por defecto si no se selecciona nada
    }
-         var_dump($codigofamilia);
+
          
      
    } 

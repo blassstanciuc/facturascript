@@ -37,6 +37,8 @@ class EditProducto extends EditController
 {
     use ProductImagesTrait;
 
+ 
+
     public function getModelClassName(): string
     {
         return 'Producto';
@@ -80,8 +82,7 @@ class EditProducto extends EditController
 
     protected function createViewsVariants(string $viewName = 'EditVariante')
     {
-        $columna = $this->getViewModelValue('EditProducto', 'codfamilia');
-        var_dump($columna);
+
         $this->addEditListView($viewName, 'Variante', 'variants', 'fas fa-project-diagram');
 
         $attribute = new Atributo();
@@ -169,6 +170,9 @@ class EditProducto extends EditController
      */
     protected function loadData($viewName, $view)
     {
+        $value = $this->request->request->get('codfamilia');
+        var_dump($value);
+        
         $idproducto = $this->getViewModelValue('EditProducto', 'idproducto');
         $where = [new DataBaseWhere('idproducto', $idproducto)];
 

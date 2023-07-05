@@ -116,7 +116,7 @@ class __TwigTemplate_2374b5827f3a876492bdbd67e5306478 extends Template
                             <div class=\"form-group\">
                                 ";
         // line 41
-        echo twig_call_macro($macros["forms"], "macro_simpleSelect", ["nick", "nick", ($context["nick"] ?? null), twig_get_attribute($this->env, $this->source, ($context["fsc"] ?? null), "getSelectValues", [0 => "User", 1 => false, 2 => "nick"], "method", false, false, false, 41), twig_get_attribute($this->env, $this->source,         // line 42
+        echo twig_call_macro($macros["forms"], "macro_userSelect", ["nick", "nick", ($context["nick"] ?? null), twig_get_attribute($this->env, $this->source, ($context["fsc"] ?? null), "getSelectValues", [0 => "User", 1 => false, 2 => "nick"], "method", false, false, false, 41), twig_get_attribute($this->env, $this->source,         // line 42
 ($context["i18n"] ?? null), "trans", [0 => "Usuario"], "method", false, false, false, 42), "fas fa-users"], 41, $context, $this->getSourceContext());
         echo "
                             </div>

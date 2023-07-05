@@ -16,19 +16,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @author       Carlos García Gómez            <carlos@facturascripts.com>
  * @author       Artex Trading sa               <jcuello@artextrading.com>
+ * @author       Carlos García Gómez            <carlos@facturascripts.com>
  * @collaborator Jerónimo Pedro Sánchez Manzano <socger@gmail.com>
 -->
 <view>
     <columns>
         <column name="code" order="100">
-            <widget type="text" fieldname="codfamilia" onclick="EditFamilia"/>
+            <widget type="text" fieldname="codfabricante" onclick="EditFabricante"/>
         </column>
-        <column name="description" order="110">
-            <widget type="textarea" fieldname="descripcion"/>
+        <column name="name" order="110">
+            <widget type="text" fieldname="nombre"/>
         </column>
     </columns>
-    <rows>
-</rows>
 </view>
