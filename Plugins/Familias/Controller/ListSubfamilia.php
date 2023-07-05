@@ -7,7 +7,7 @@ class ListSubfamilia extends \FacturaScripts\Core\Lib\ExtendedController\ListCon
     {
         $data = parent::getPageData();
         $data["title"] = "Subfamilias";
-        $data["menu"] = "";
+        $data["menu"] = "hijodedputa";
         $data["icon"] = "fas fa-search";
         return $data;
     }
