@@ -50,10 +50,15 @@
                         </div>
 
                     </div>
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary" id="btnPermisoUsuario">
-                            {{ i18n.trans('save') }}
-                        </button>
+                    <div class="row justify-content-between">
+                        <div class="col-4">
+                            <a class="btn btn-danger" href="/ListPermisosMarca#ListPermisosMarca" role="button">Volver</a>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary text-right" id="btnPermisoUsuario">
+                                {{ i18n.trans('save') }}
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

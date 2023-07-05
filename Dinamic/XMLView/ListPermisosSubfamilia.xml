@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="codpermisossubfamilia" display="none" order="100">
+            <widget type="number" fieldname="codpermisossubfamilia" onclick=""/>
+        </column>
+        <column name="usuario" order="110">
+            <widget type="Text" fieldname="usuarios"/>
+        </column>
+        <column name="subfamilia" order="120">
+            <widget type="text" fieldname="subfamilias">
+            </widget>
+        </column>
+    </columns>
+</view>

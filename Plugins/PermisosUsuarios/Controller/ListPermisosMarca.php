@@ -30,6 +30,7 @@ class ListPermisosMarca extends ListController
       
       $this->createPermisosFamilia();
       $this->createPermisosMarca();
+      $this->createPermisosSubfamilia();
     }
 
     protected function createPermisosMarca(string $viewName = 'ListPermisosMarca')
@@ -46,5 +47,11 @@ class ListPermisosMarca extends ListController
       $this->addOrderBy($viewName, ['codpermisos'], 'code');
       $this->addOrderBy($viewName, ['idusuario'], 'user');
     }
-    
+    protected function createPermisosSubfamilia(string $viewName = 'ListPermisosSubfamilia')
+    {
+      $this->addView($viewName, 'Join\modelJoinSubfamilia', 'Permisos Subfamilia', 'fas fa-users-cog');
+      $this->addSearchFields($viewName, ['idusuariosubfamilia']);
+      $this->addOrderBy($viewName, ['codpermisossubfamilia'], 'code');
+      $this->addOrderBy($viewName, ['idusuariosubfamilia'], 'user');
+    }
 }

@@ -36,14 +36,12 @@
                     <values source="impuestos" fieldcode="codimpuesto" fieldtitle="descripcion"/>
                 </widget>
             </column>
-        <column name="Subfamilia" titleurl="ListSubFamilia" order="140">
-                <widget type="select" fieldname="codsubfamilia" parent="codfamilia" onclick="EditFamilia">
-                    <values source="subfamilias" fieldcode="id" fieldtitle="descripcion" fieldfilter="padre"/>
-                </widget>
-            </column><column name="Modelo" titleurl="ListMarcaModelo" order="120">
+        <column name="Modelo" titleurl="ListMarcaModelo" order="120">
                 <widget type="select" fieldname="codmodelo" parent="codfabricante" onclick="EditFamilia">
                     <values source="tablamarcamodelo" fieldcode="id" fieldtitle="descripcion" fieldfilter="padre"/>
                 </widget>
+            </column><column name="Subfamilia" titleurl="ListSubFamilia" order="140">
+                <widget type="select" fieldname="codsubfamilia" parent="codfamilia" onclick="EditFamilia"/>
             </column></group>
         <group name="description" numcolumns="12">
             <column name="description" order="100">

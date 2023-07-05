@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EditPermisosMarca.html.twig */
-class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
+/* EditPermisosSubfamilia.html.twig */
+class __TwigTemplate_2374b5827f3a876492bdbd67e5306478 extends Template
 {
     private $source;
     private $macros = [];
@@ -39,7 +39,7 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("Master/PanelController.html.twig", "EditPermisosMarca.html.twig", 1);
+        $this->parent = $this->loadTemplate("Master/PanelController.html.twig", "EditPermisosSubfamilia.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -80,7 +80,7 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
         echo "    <!-- Macros Template Imports -->
     ";
         // line 20
-        $macros["forms"] = $this->loadTemplate("Macro/Forms.html.twig", "EditPermisosMarca.html.twig", 20)->unwrap();
+        $macros["forms"] = $this->loadTemplate("Macro/Forms.html.twig", "EditPermisosSubfamilia.html.twig", 20)->unwrap();
         // line 21
         echo "    <div class=\"container\">
         <div class=\"card shadow\">
@@ -88,16 +88,16 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
                 <h1 class=\"h3\">
                     <i class=\"fas fa-user\" aria-hidden=\"true\"></i> ";
         // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "Permisos Marca"], "method", false, false, false, 25), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "Permisos Subfamilia"], "method", false, false, false, 25), "html", null, true);
         echo "
                 </h1>
                 <p>";
         // line 27
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "En esta venta podras asignarle al usuario seleccionado las marcas con las que podra trabajar."], "method", false, false, false, 27), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "En esta venta podras asignarle al usuario seleccionado las subfamilias con las que podra trabajar."], "method", false, false, false, 27), "html", null, true);
         echo "</p>
                 <hr/>
-                <form method=\"post\" class=\"form\" id=\"formPermisosMarcas\">
-                    <input type=\"hidden\" name=\"action\" value=\"savePermisosMarca\"/>
+                <form method=\"post\" class=\"form\" id=\"formPermisosSubfamilias\">
+                    <input type=\"hidden\" name=\"action\" value=\"savePermisosSubfamilia\"/>
                     ";
         // line 31
         echo $this->env->getFunction('formToken')->getCallable()();
@@ -107,7 +107,7 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
                             <div class=\"form-group\">
                                 ";
         // line 35
-        echo twig_call_macro($macros["forms"], "macro_simpleInput", ["codpermisosmarca", "codpermisosmarca", ($context["permisosmarca"] ?? null), "serial", twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "id"], "method", false, false, false, 35), "fas fa-user-cog", ["maxlength" => "100"]], 35, $context, $this->getSourceContext());
+        echo twig_call_macro($macros["forms"], "macro_simpleInput", ["codpermisossubfamilia", "codpermisossubfamilia", ($context["permisossubfamilias"] ?? null), "serial", twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "id"], "method", false, false, false, 35), "fas fa-user-cog", ["maxlength" => "100"]], 35, $context, $this->getSourceContext());
         // line 36
         echo "
                             </div>
@@ -120,13 +120,13 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
 ($context["i18n"] ?? null), "trans", [0 => "Usuario"], "method", false, false, false, 42), "fas fa-users"], 41, $context, $this->getSourceContext());
         echo "
                             </div>
-                        </div>
+                        </div>                     
                         <div class=\"col-sm-4\">
                             <div class=\"form-group\">
                                 ";
         // line 47
-        echo twig_call_macro($macros["forms"], "macro_multiSelect", ["codfabricante", "codfabricante", ($context["codfabricante"] ?? null), twig_get_attribute($this->env, $this->source, ($context["fsc"] ?? null), "getSelectValues", [0 => "Fabricante", 1 => false, 2 => "nombre"], "method", false, false, false, 47), twig_get_attribute($this->env, $this->source,         // line 48
-($context["i18n"] ?? null), "trans", [0 => "Marca"], "method", false, false, false, 48), "fas fa-laptop-house"], 47, $context, $this->getSourceContext());
+        echo twig_call_macro($macros["forms"], "macro_multiSelect", ["codsubfamilia", "codsubfamilia", ($context["codsubfamilia"] ?? null), twig_get_attribute($this->env, $this->source, ($context["fsc"] ?? null), "getSelectValues", [0 => "Subfamilia", 1 => false, 2 => "descripcion"], "method", false, false, false, 47), twig_get_attribute($this->env, $this->source,         // line 48
+($context["i18n"] ?? null), "trans", [0 => "Subfamilia"], "method", false, false, false, 48), "fas fa-laptop-house"], 47, $context, $this->getSourceContext());
         echo "
                             </div>
                         </div>
@@ -134,7 +134,7 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
                     </div>
                     <div class=\"row justify-content-between\">
                         <div class=\"col-4\">
-                            <a class=\"btn btn-danger\" href=\"/ListPermisosMarca#ListPermisosMarca\" role=\"button\">Volver</a>
+                            <a class=\"btn btn-danger\" href=\"/ListPermisosMarca#ListPermisosSubfamilia\" role=\"button\">Volver</a>
                         </div>
                         <div class=\"col-auto\">
                             <button type=\"submit\" class=\"btn btn-primary text-right\" id=\"btnPermisoUsuario\">
@@ -155,7 +155,7 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
 
     public function getTemplateName()
     {
-        return "EditPermisosMarca.html.twig";
+        return "EditPermisosSubfamilia.html.twig";
     }
 
     public function isTraitable()
@@ -170,6 +170,6 @@ class __TwigTemplate_5f192a5c0bc203df81793bea0f78272f extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "EditPermisosMarca.html.twig", "/var/www/html/facturascripts/Dinamic/View/EditPermisosMarca.html.twig");
+        return new Source("", "EditPermisosSubfamilia.html.twig", "/var/www/html/facturascripts/Dinamic/View/EditPermisosSubfamilia.html.twig");
     }
 }

@@ -22,17 +22,17 @@
         <div class="card shadow">
             <div class="card-body">
                 <h1 class="h3">
-                    <i class="fas fa-user" aria-hidden="true"></i> {{ i18n.trans('Permisos Marca') }}
+                    <i class="fas fa-user" aria-hidden="true"></i> {{ i18n.trans('Permisos Subfamilia') }}
                 </h1>
-                <p>{{ i18n.trans('En esta venta podras asignarle al usuario seleccionado las marcas con las que podra trabajar.') }}</p>
+                <p>{{ i18n.trans('En esta venta podras asignarle al usuario seleccionado las subfamilias con las que podra trabajar.') }}</p>
                 <hr/>
-                <form method="post" class="form" id="formPermisosMarcas">
-                    <input type="hidden" name="action" value="savePermisosMarca"/>
+                <form method="post" class="form" id="formPermisosSubfamilias">
+                    <input type="hidden" name="action" value="savePermisosSubfamilia"/>
                     {{ formToken() }}
                     <div class="form-row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {{ forms.simpleInput('codpermisosmarca', 'codpermisosmarca',permisosmarca, 'serial', i18n.trans('id'),
+                                {{ forms.simpleInput('codpermisossubfamilia', 'codpermisossubfamilia',permisossubfamilias, 'serial', i18n.trans('id'),
                                     'fas fa-user-cog', {'maxlength': '100'}) }}
                             </div>
                         </div>
@@ -41,18 +41,18 @@
                                 {{ forms.simpleSelect('nick', 'nick', nick, fsc.getSelectValues('User', false, 'nick'),
                                 i18n.trans('Usuario'), 'fas fa-users') }}
                             </div>
-                        </div>
+                        </div>                     
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {{ forms.multiSelect('codfabricante', 'codfabricante', codfabricante, fsc.getSelectValues('Fabricante', false, 'nombre'),
-                                    i18n.trans('Marca'), 'fas fa-laptop-house') }}
+                                {{ forms.multiSelect('codsubfamilia', 'codsubfamilia', codsubfamilia, fsc.getSelectValues('Subfamilia', false, 'descripcion'),
+                                    i18n.trans('Subfamilia'), 'fas fa-laptop-house') }}
                             </div>
                         </div>
 
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-4">
-                            <a class="btn btn-danger" href="/ListPermisosMarca#ListPermisosMarca" role="button">Volver</a>
+                            <a class="btn btn-danger" href="/ListPermisosMarca#ListPermisosSubfamilia" role="button">Volver</a>
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary text-right" id="btnPermisoUsuario">

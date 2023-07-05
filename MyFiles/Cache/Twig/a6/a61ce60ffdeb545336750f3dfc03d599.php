@@ -132,13 +132,18 @@ class __TwigTemplate_be9da784f830b77d2bab30fe5df75845 extends Template
                         </div>
 
                     </div>
-                    <div class=\"text-right\">
-                        <button type=\"submit\" class=\"btn btn-primary\" id=\"btnPermisoUsuario\">
-                            ";
-        // line 55
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "save"], "method", false, false, false, 55), "html", null, true);
+                    <div class=\"row justify-content-between\">
+                        <div class=\"col-4\">
+                            <a class=\"btn btn-danger\" href=\"/ListPermisosMarca\" role=\"button\">Volver</a>
+                        </div>
+                        <div class=\"col-auto\">
+                            <button type=\"submit\" class=\"btn btn-primary text-right\" id=\"btnPermisoUsuario\">
+                                ";
+        // line 59
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["i18n"] ?? null), "trans", [0 => "save"], "method", false, false, false, 59), "html", null, true);
         echo "
-                        </button>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -160,7 +165,7 @@ class __TwigTemplate_be9da784f830b77d2bab30fe5df75845 extends Template
 
     public function getDebugInfo()
     {
-        return array (  139 => 55,  129 => 48,  128 => 47,  120 => 42,  119 => 41,  112 => 36,  110 => 35,  103 => 31,  96 => 27,  91 => 25,  85 => 21,  83 => 20,  80 => 19,  76 => 18,  66 => 12,  62 => 11,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  143 => 59,  129 => 48,  128 => 47,  120 => 42,  119 => 41,  112 => 36,  110 => 35,  103 => 31,  96 => 27,  91 => 25,  85 => 21,  83 => 20,  80 => 19,  76 => 18,  66 => 12,  62 => 11,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

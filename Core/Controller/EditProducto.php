@@ -80,6 +80,8 @@ class EditProducto extends EditController
 
     protected function createViewsVariants(string $viewName = 'EditVariante')
     {
+        $columna = $this->getViewModelValue('EditProducto', 'codfamilia');
+        var_dump($columna);
         $this->addEditListView($viewName, 'Variante', 'variants', 'fas fa-project-diagram');
 
         $attribute = new Atributo();

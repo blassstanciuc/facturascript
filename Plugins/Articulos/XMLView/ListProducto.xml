@@ -48,7 +48,7 @@
                 <values source="familias" fieldcode="codfamilia" fieldtitle="descripcion"/>
             </widget>
         </column>
-        <column name="Sub Familias" order="170">
+        <column name="Subfamilias" order="170">
             <widget type="autocomplete" fieldname="codsubfamilia">
                 <values source="subfamilias" fieldcode="id" fieldtitle="descripcion"/>
             </widget>
