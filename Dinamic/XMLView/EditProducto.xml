@@ -27,21 +27,21 @@
             </column>
             <column name="Marca" titleurl="ListFabricante" order="110">
                 <widget type="select" fieldname="codfabricante" onclick="EditFabricante"/>
-            <widget type="select" fieldname="codfabricante" onclick="EditFabricante"/></column>
-            <column name="Familia" overwrite="true" title="Familia" order="130">
-                <widget type="select" fieldname="codfamilia" onclick="EditFamilia"/>
+            <widget type="select" fieldname="codfabricante"/></column>
+            <column name="Familia" overwrite="true" titleurl="\EditFamilia" title="Familia" order="130">
+                <widget type="select" fieldname="codfamilia"/>
             </column>
             <column name="tax" overwrite="true" titleurl="ListImpuesto" order="150">
                 <widget type="select" fieldname="codimpuesto" onclick="EditImpuesto">
                     <values source="impuestos" fieldcode="codimpuesto" fieldtitle="descripcion"/>
                 </widget>
             </column>
-        <column name="Modelo" titleurl="ListMarcaModelo" order="120">
-                <widget type="select" fieldname="codmodelo" parent="codfabricante" onclick="EditFamilia">
+        <column name="Modelo" titleurl="\EditMarcaModelo" order="120">
+                <widget type="select" fieldname="codmodelo" parent="codfabricante">
                     <values source="tablamarcamodelo" fieldcode="id" fieldtitle="descripcion" fieldfilter="padre"/>
                 </widget>
-            </column><column name="Subfamilia" titleurl="ListSubFamilia" order="140">
-                <widget type="select" fieldname="codsubfamilia" onclick="EditFamilia"/>
+            </column><column name="Subfamilia" titleurl="\EditSubfamilia" order="140">
+                <widget type="select" fieldname="codsubfamilia"/>
             </column></group>
         <group name="description" numcolumns="12">
             <column name="description" order="100">
