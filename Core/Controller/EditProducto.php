@@ -170,8 +170,7 @@ class EditProducto extends EditController
      */
     protected function loadData($viewName, $view)
     {
-        $value = $this->request->request->get('codfamilia');
-        var_dump($value);
+        
         
         $idproducto = $this->getViewModelValue('EditProducto', 'idproducto');
         $where = [new DataBaseWhere('idproducto', $idproducto)];
