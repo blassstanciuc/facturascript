@@ -60,19 +60,13 @@ class Producto
         foreach ($resultsSubfamilia as $result) {
          $descripcion = $result['descripcion'];
          $codigo = $result['id'];
-         $opcionsSubfamilia .= "<option value='$codigo'>$descripcion</option>";
+         $opcionsSubfamilia .= "<values value='$codigo'>$descripcion</values>";
+         //$filter =" parent='codfamilia' data-fieldfilter='padre'";
          }
          $this->codsubfamilia = $opcionsSubfamilia;
+         //$this->codsubfamilia .= $filter;   
          //$columna = $this->getViewModelValue('EditProducto', 'codfamilia');
    
-     };
-      if (isset($_POST['codfamilia'])) {
-      $codigofamilia = $_POST['codfamilia'];
-   } else {
-      $codigofamilia = ''; // Valor por defecto si no se selecciona nada
-   }
-
-         
-     
+     };     
    } 
-}
+}?>
