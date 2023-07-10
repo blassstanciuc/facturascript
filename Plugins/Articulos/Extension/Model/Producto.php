@@ -64,7 +64,8 @@ class Producto
          //$filter =" parent='codfamilia' data-fieldfilter='padre'";
          }
          
-         $this->codsubfamilia = "<values source='Producto' fieldcode='id' fieldtitle='descripcion' fieldfilter='padre'/>$opcionsSubfamilia</values>";
+         $this->codsubfamilia = $opcionsSubfamilia;
+         //$this->codsubfamilia .= "<values source='Producto' fieldcode='id' fieldtitle='descripcion' fieldfilter='padre'/>$opcionsSubfamilia</values>";
          //$this->codsubfamilia .= $filter;   
          //$columna = $this->getViewModelValue('EditProducto', 'codfamilia');
    
@@ -72,17 +73,3 @@ class Producto
    } 
 }?>
 
-
-<script>
-    var codfamiliaSelect = document.getElementsByName("codfamilia")[0];
-
-    codfamiliaSelect.addEventListener("change", function() {
-        var selectedValue = codfamiliaSelect.value;
-        var selectedText = codfamiliaSelect.options[codfamiliaSelect.selectedIndex].text;
-
-        console.log("Valor seleccionado: ", selectedValue);
-        console.log("Texto seleccionado: ", selectedText);
-
-        // Realiza las acciones adicionales que desees con los valores seleccionados
-    });
-</script>
