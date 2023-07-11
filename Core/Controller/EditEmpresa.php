@@ -119,7 +119,7 @@ class EditEmpresa extends EditController
 
         $columnVATException = $view->columnForName('vat-exception');
         if ($columnVATException && $columnVATException->widget->getType() === 'select') {
-            $columnVATException->widget->setValuesFromArrayKeys(RegimenIVA::allExceptions(), true, true);
+            $columnVATException->widget->setValuesFromArrrayKeys(RegimenIVA::allExceptions(), true, true);
         }
 
         $columnLogo = $view->columnForName('logo');
