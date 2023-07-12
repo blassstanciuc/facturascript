@@ -176,14 +176,13 @@
                 {% endfor %}> {# end select #}
 
             {% for key,option in allValues %}
-             {% if key != 'admin' %}
+             {% if option != 99 %}
                 <option value="{{ key }}"{% if value == key %} selected="selected"{% endif %}>
-                    {{ option }}
+                    {{key}}
                 </option>
                 {% endif %}
             {% endfor %}
         </select>
-
     {% if icon %}
         </div>
     {% endif %}

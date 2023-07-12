@@ -5,10 +5,12 @@
             <widget type="number" fieldname="codpermisosmarca" onclick=""/>
         </column>
         <column name="usuario" order="110">
-            <widget type="Text" fieldname="usuarios"/>
+            <widget type="Text" fieldname="idusuariomarca"/>
         </column>
         <column name="marca" order="120">
-            <widget type="Text" fieldname="marcas"/>
+            <widget type="autocomplete" fieldname="idmarca">
+                <values source="fabricantes" fieldcode="codfabricante" fieldtitle="nombre"/>
+            </widget>
         </column>
     </columns>
 </view>

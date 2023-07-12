@@ -5,10 +5,12 @@
             <widget type="number" fieldname="codpermisossubfamilia" onclick=""/>
         </column>
         <column name="usuario" order="110">
-            <widget type="Text" fieldname="usuarios"/>
+            <widget type="Text" fieldname="idusuariosubfamilia">
+            </widget>
         </column>
         <column name="subfamilia" order="120">
-            <widget type="text" fieldname="subfamilias">
+            <widget type="autocomplete" fieldname="idsubfamilia">
+                <values source="subfamilias" fieldcode="id" fieldtitle="descripcion"/>
             </widget>
         </column>
     </columns>

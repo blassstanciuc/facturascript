@@ -47,22 +47,22 @@ class Producto
              $options .= "<option value='$codigo'>$descripcion</option>";
          }
      
-         $this->codfamilia = $options;
+         //$this->codfamilia = $options;
 
          foreach ($resultsMarca as $result) {
             $descripcion = $result['nombre'];
             $codigo = $result['codfabricante'];
-            $opcionsMarca .= "<option value='$codigo'>$descripcion</option>";
+            $opcionsMarca .= "<option value='$codigo' fieldtitle='nombre'>$descripcion</option>";
         }
 
-        $this->codfabricante = $opcionsMarca;
+        //$this->codfabricante = $opcionsMarca;
 
         foreach ($resultsSubfamilia as $result) {
          $descripcion = $result['descripcion'];
          $codigo = $result['id'];
          $opcionsSubfamilia .= "<option value='$codigo'>$descripcion</option>";
          }
-         $this->codsubfamilia = $opcionsSubfamilia;
+         //$this->codsubfamilia = $opcionsSubfamilia;
          //$columna = $this->getViewModelValue('EditProducto', 'codfamilia');
    
      };

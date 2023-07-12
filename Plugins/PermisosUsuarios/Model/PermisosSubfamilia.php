@@ -30,6 +30,10 @@ class PermisosSubfamilia extends ModelClass
         $codpermisos = $this->codpermisossubfamilia;
 
         $pdo = new DataBase();
+
+        $allusers = $pdo->select("SELECT idsubfamilia FROM permisossubfamilia");
+        var_dump($allusers);
+        exit;
         foreach ($idsubfamiliaArray as $idfamilia) {
             $idfamilia = intval($idfamilia); // Convertir a entero
           
@@ -38,10 +42,11 @@ class PermisosSubfamilia extends ModelClass
             $pdo->exec("INSERT INTO permisossubfamilia (codpermisossubfamilia, idusuariosubfamilia, idsubfamilia) VALUES ('" . $codpermisos . "', '" . $idusu . "', '" . $idfamilia . "')");
 
         }
+        
         $this->toolBox()->i18nLog()->notice('record-updated-correctly');
         return;
     }
-    
+
 }
 
 ?>

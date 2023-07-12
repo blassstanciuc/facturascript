@@ -25,7 +25,8 @@ use FacturaScripts\Core\Lib\ExtendedController\BaseView;
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Core\Lib\ExtendedController\ProductImagesTrait;
 use FacturaScripts\Dinamic\Model\Atributo;
-
+use FacturaScripts\Core\Session;
+use FacturaScripts\Core\Base\DataBase;
 /**
  * Controller to edit a single item from the EditProducto model
  *
@@ -36,7 +37,7 @@ use FacturaScripts\Dinamic\Model\Atributo;
 class EditProducto extends EditController
 {
     use ProductImagesTrait;
-
+    public $us;
  
 
     public function getModelClassName(): string
@@ -63,6 +64,9 @@ class EditProducto extends EditController
         $this->createViewsProductImages();
         $this->createViewsStock();
         $this->createViewsSuppliers();
+        $this->cargaDeSelectMarca();
+        $this->cargaDeSelectFamilia();
+        $this->cargaDeSelectSubfamilia();
     }
 
     protected function createViewsStock(string $viewName = 'EditStock')
@@ -207,6 +211,91 @@ class EditProducto extends EditController
             case 'EditProductoProveedor':
                 $view->loadData('', $where, ['id' => 'DESC']);
                 break;
+        }
+
+    }
+
+    protected function cargaDeSelectMarca(string $viewName='EditProducto')
+    {
+        $this->us = Session::user()->level;
+       
+        $usuario = $this->us;
+        $pdoMarca = new DataBase();
+        $column = $this->views[$viewName]->columnForName('Marca');
+        $opcionsMarca = [''];
+
+        if($usuario != 99){
+            $resultsMarca = $pdoMarca->select("SELECT * FROM fabricantes f INNER JOIN permisosmarca p ON p.idmarca = f.codfabricante WHERE p.idusuariomarca = '" . $usuario . "'");
+        }else{
+            $resultsMarca = $pdoMarca->select("SELECT * FROM fabricantes");
+         }
+
+         foreach ($resultsMarca as $result) {
+            $descripcion = $result['nombre'];
+            $codigo = $result['codfabricante'];
+
+            array_push($opcionsMarca, ['value'=>$codigo, 'title'=>$descripcion]);
+        }
+
+        if($column && $column->widget->getType() === 'select') {
+
+            $column->widget->setValuesFromArray($opcionsMarca);
+        }
+    }
+
+    protected function cargaDeSelectFamilia(string $viewName='EditProducto')
+    {
+        $this->us = Session::user()->nick;
+
+        $usuario = $this->us;
+        $con = new DataBase();
+        $column = $this->views[$viewName]->columnForName('Familia');
+        $options = [''];
+
+        if($usuario != 'admin'){
+            $results = $con->select("SELECT * FROM familias f INNER JOIN permisosfacmilias p ON p.idfamilia = f.codfamilia WHERE p.idusuario = '" . $usuario . "'");
+         }else{
+            $results = $con->select("SELECT * FROM familias");
+         }
+         
+         foreach ($results as $result) {
+            $descripcion = $result['descripcion'];
+            $codigo = $result['codfamilia'];
+
+            array_push($options, ['value'=>$codigo, 'title'=>$descripcion]);
+        }
+
+        if($column && $column->widget->getType() === 'select') {
+
+            $column->widget->setValuesFromArray($options);
+        }
+    }
+
+    protected function cargaDeSelectSubfamilia(string $viewName='EditProducto')
+    {
+        $this->us = Session::user()->nick;
+        
+        $usuario = $this->us;
+        $pdoSubfamilia = new DataBase();
+        $column = $this->views[$viewName]->columnForName('Subfamilia');
+        $opcionsSubfamilia  = [''];
+
+        if($usuario != 'admin'){
+            $resultsSubfamilia = $pdoSubfamilia->select("SELECT * FROM subfamilias f INNER JOIN permisossubfamilia p ON p.idsubfamilia = f.id WHERE p.idusuariosubfamilia = '" . $usuario . "'");
+         }else{
+            $resultsSubfamilia = $pdoSubfamilia->select("SELECT * FROM subfamilias ");
+         }
+         
+         foreach ($resultsSubfamilia as $result) {
+            $descripcion = $result['descripcion'];
+            $codigo = $result['id'];
+
+            array_push($opcionsSubfamilia, ['value'=>$codigo, 'title'=>$descripcion, 'data-fieldfilter'=>'padre', 'parent'=>'codfamilia']);
+        }
+
+        if($column && $column->widget->getType() === 'select') {
+
+            $column->widget->setValuesFromArray($opcionsSubfamilia );
         }
     }
 }

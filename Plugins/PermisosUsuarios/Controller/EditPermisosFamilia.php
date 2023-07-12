@@ -3,6 +3,7 @@ namespace FacturaScripts\Plugins\PermisosUsuarios\Controller;
 
 use FacturaScripts\Core\Model\Familia;
 use FacturaScripts\Plugins\PermisosUsuarios\Model\PermisosFamilia;
+
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use Symfony\Component\HttpFoundation\Request;
 use FacturaScripts\Core\Base\Controller;
@@ -58,10 +59,11 @@ class EditPermisosFamilia extends \FacturaScripts\Core\Lib\ExtendedController\Ed
 
 
 
-    public function getSelectValues(string $modelName, bool $addEmpty = false, string $descriptionColumn = 'nombre'): array
+    public function getSelectValues(string $modelName, bool $addEmpty = false, string $descriptionColumn = 'level'): array
     {
         $values = $addEmpty ? ['' => '------'] : [];
         $modelName = '\\FacturaScripts\\Dinamic\\Model\\' . $modelName;
+        $nivel = 'level';
         $model = new $modelName();
     
         $order = [$descriptionColumn => 'ASC'];
@@ -90,6 +92,7 @@ class EditPermisosFamilia extends \FacturaScripts\Core\Lib\ExtendedController\Ed
         $permisosFamilia->idfamilia = $this->codfamilia;
         $permisosFamilia->save();
     }
+
     protected function loadData($viewName, $view)
     {
         switch ($viewName) {

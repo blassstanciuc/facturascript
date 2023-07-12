@@ -14,7 +14,9 @@
                 <widget type="select" fieldname="codfamilia"/>
             </column>
             <column name="Subfamilia" titleurl="\EditSubfamilia" order="140">
-                <widget type="select" fieldname="codsubfamilia"/>
+                <widget type="select" fieldname="codsubfamilia">
+                      <values/>
+                </widget>
             </column>
             <column name="tax" overwrite="true" titleurl="ListImpuesto" order="150">
                 <widget type="select" fieldname="codimpuesto" onclick="EditImpuesto">

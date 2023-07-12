@@ -2,7 +2,6 @@
 
 {% block bodyHeaderOptions %}
     {% set pageData = fsc.getPageData() %}
-    {% set code = app.request.query.get('code') %}
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col-1">
@@ -33,13 +32,13 @@
                     <div class="form-row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {{ forms.simpleInput('codpermiso', 'codpermiso', code, 'serial', i18n.trans('id'),
+                                {{ forms.simpleInput('codpermiso', 'codpermiso',permisosfacmilias, 'serial', i18n.trans('id'),
                                     'fas fa-user-cog', {'maxlength': '100'}) }}
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {{ forms.userSelect('nick', 'nick', nick, fsc.getSelectValues('User', false, 'nick'),
+                                {{ forms.userSelect('nick', 'nick', nick, fsc.getSelectValues('User', false,),
                                 i18n.trans('Usuario'), 'fas fa-users') }}
                             </div>
                         </div>                     
@@ -49,7 +48,6 @@
                                     i18n.trans('Familia'), 'fas fa-laptop-house') }}
                             </div>
                         </div>
-
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-4">

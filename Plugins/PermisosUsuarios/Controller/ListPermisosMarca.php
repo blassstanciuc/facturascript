@@ -35,21 +35,21 @@ class ListPermisosMarca extends ListController
 
     protected function createPermisosMarca(string $viewName = 'ListPermisosMarca')
     {
-      $this->addView($viewName, 'Join\modelJoinMarca', 'Permisos Marca', 'fas fa-users-cog');
+      $this->addView($viewName, 'PermisosMarca', 'Permisos Marca', 'fas fa-users-cog');
       $this->addSearchFields($viewName, ['idusuariomarca']);
       $this->addOrderBy($viewName, ['codpermisosmarca'], 'code');
       $this->addOrderBy($viewName, ['idusuariomarca'], 'user');
     }
         protected function createPermisosFamilia(string $viewName = 'ListPermisosFamilia')
     {
-      $this->addView($viewName, 'Join\modelJoin', 'Permisos Familia', 'fas fa-users-cog');
+      $this->addView($viewName, 'PermisosFamilia', 'Permisos Familia', 'fas fa-users-cog');
       $this->addSearchFields($viewName, ['idusuario']);
       $this->addOrderBy($viewName, ['codpermisos'], 'code');
       $this->addOrderBy($viewName, ['idusuario'], 'user');
     }
     protected function createPermisosSubfamilia(string $viewName = 'ListPermisosSubfamilia')
     {
-      $this->addView($viewName, 'Join\modelJoinSubfamilia', 'Permisos Subfamilia', 'fas fa-users-cog');
+      $this->addView($viewName, 'PermisosSubfamilia', 'Permisos Subfamilia', 'fas fa-users-cog');
       $this->addSearchFields($viewName, ['idusuariosubfamilia']);
       $this->addOrderBy($viewName, ['codpermisossubfamilia'], 'code');
       $this->addOrderBy($viewName, ['idusuariosubfamilia'], 'user');
